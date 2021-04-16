@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const db = mongoose.connect('mongodb://localhost/bookApi')
+const db = mongoose.connect('mongodb://localhost/bookApi', {useUnifiedTopology: true, useNewUrlParser: true});
 const bookRouter = express.Router();
 const port = process.env.PORT || 4000;
 const Book = require('./models/BookModel');
